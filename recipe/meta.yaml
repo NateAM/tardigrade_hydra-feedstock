@@ -10,7 +10,7 @@ source:
   sha256: 9547c9f64b8f9254b2c208e4870966f5f26eea8d5cb934aaf7a6f1b4b345e42c
 
 build:
-  number: 0
+  number: 1
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script:
@@ -74,8 +74,8 @@ test:
   commands:
     - set -x
     - cmake -S . -B build -DCMAKE_BUILD_TYPE=conda-test -DCMAKE_INSTALL_LIBDIR=lib
-    - cmake --build build --target all --verbose --parallel 4
-    - ctest --test-dir build --output-on-failure -R 'test_' --parallel 4
+    - cmake --build build --target all --verbose --parallel 1
+    - ctest --test-dir build --output-on-failure -R 'test_' --parallel 1
 
 about:
   home: https://github.com/UCBoulder/tardigrade_hydra
